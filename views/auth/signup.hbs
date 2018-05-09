@@ -1,0 +1,29 @@
+<h1>SIGN UP</h1>
+<br>
+<form action="/signup" method="POST">
+<input type="text" name="fullname" placeholder="FULL NAME">
+<input type="text" name="email" placeholder="EMAIL">
+<input type="text" name="phone" placeholder="PHONE">
+<input type="file" name="profilePic">
+<input type="text" name="username" placeholder="USERNAME">
+<br>
+<input type="password" name="password" placeholder="PASSWORD">
+<br>
+<select name="role">
+  <optgroup label = "Choose One">
+  <option value="Art">ART</option>
+  <option value="Film">FILM</option>
+  <option value="Music">MUSIC</option>
+  </optgroup>
+</select>
+<br>
+<br>
+<button>Signup</button>
+
+</form>
+
+{{#if message}}
+<div class="message">
+  {{message}}
+</div>
+{{/if}}

@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MX | Login</title>
+</head>
+<body>
+<div class="div-5 bg-login">
+  <div class="container center-page">
+    <div class="col-lg pt-1">
+        <img class="shadow-1" src="/images/logo@216x-8.png" alt="logo" width="80px">
+        <br>
+        <h1 class="sans-serif login-page-text text-shadow">LOGIN</h1>
+      <br>
+      <form class="align-all" action="/login" method="POST">
+      <div id="input_container">
+          <input class="input-login sans-serif" type="text" id="input-user" name="username" placeholder="USERNAME">
+          <img src="/images/user.png"id="input_img">
+      </div>
+      <br>
+      <br>
+      <div id="input_container">
+        <input class="input-login" type="password" id="input-user" name="password" placeholder="PASSWORD">
+        <img src="/images/lock.png" alt="lock-icon" id="input_img2">
+      </div>
+      <br>
+      <br>
+      <input type='image' src="/images/login-submit.png" width="35px" alt="login">
+      </form>
+      
+      {{#if message}}
+      <div class="message">
+        {{message}}
+      </div>
+      {{/if}}
+      <br>
+      <h3 class="login-page-text text-shadow"><a class="link-free login-page-text" href="/#">FORGOT PASSWORD?</a></h3>
+    </div>
+  </div>
+</div>
+</body>
+</html>

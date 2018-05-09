@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{title}}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>{{title}}</title>
   </head>
   <body>
-
+    <nav class="container "> <!-- NAV BAR -->
+      <div class="nav-bar">
+        <div class="logo"> <!-- LOGO -->
+          <img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon">
+        </div>
+  
+        <div class="nav-list-container">
+          <ul class="nav-list w-400 align-items-center"> <!-- Nav Links -->
+            <li> 
+              <a href="/discover"> 
+                <img class="shadow-1" src="/images/discover-icon.png" alt="discover-icon" width="50px"> <!-- DISCOVER -->
+              </a></li>
+            <li>
+              <a href="/p/dashboard/:username">
+                <img class="shadow-1" src="/images/DASHBOARD.png" alt="dashboard-icon" width="50px"> <!-- DASHBOARD -->
+              </a>
+            </li>
+            <li>
+              <a href="/edit/profile/:id">
+                <img class="shadow-1" src="/images/USER-PIC@216x-8.png" alt="user-pic" width="50px"> <!-- USER PIC -->
+              </a>
+            </li>
+            <li>
+              <a href="/logout">
+                <img class="shadow-1" src="/images/logout-rounded-filled.png" alt="logout-icon" width="50px"> <!-- LOGOUT ICON -->
+              </a>
+            </li>
+          </ul>
+        </div>
+      
+      </div>
+      <hr class="hr-gray">
+    </nav>
     {{{body}}}
 
     <script src='/javascripts/script.js'></script>
   </body>
 </html>
+  
