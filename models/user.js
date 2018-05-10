@@ -5,7 +5,7 @@ const userSchema = new Schema({
   fullname: String,
   email: String,
   phone: String,
-  profilePic: { type: String, default: '/public/images/default-icon.png' },
+  profilePic: { type: String, default: '/images/default-icon.png' },
   username: String,
   password: String,
   role: {type: String, enum: ['Music', 'Art', 'Film']}

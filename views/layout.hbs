@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="http://vjs.zencdn.net/6.8.0/video-js.css" rel="stylesheet">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>{{title}}</title>
+    <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
   </head>
   <body>
     <nav class="container "> <!-- NAV BAR -->
       <div class="nav-bar">
         <div class="logo"> <!-- LOGO -->
-          <img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon">
+          <a href="/"><img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon"></a>
+          <a href="/upload"><img src="/images/UPLOAD@216x-8.png" alt="upload-icon" width="40px"></a>
         </div>
   
         <div class="nav-list-container">
           <ul class="nav-list w-400 align-items-center"> <!-- Nav Links -->
             <li> 
-              <a href="/discover"> 
+              <a href="/p/discover"> 
                 <img class="shadow-1" src="/images/discover-icon.png" alt="discover-icon" width="50px"> <!-- DISCOVER -->
               </a></li>
             <li>
-              <a href="/p/dashboard/:username">
+              <a href="/p/dashboard/">
                 <img class="shadow-1" src="/images/DASHBOARD.png" alt="dashboard-icon" width="50px"> <!-- DASHBOARD -->
               </a>
             </li>
             <li>
-              <a href="/edit/profile/:id">
-                <img class="shadow-1" src="/images/USER-PIC@216x-8.png" alt="user-pic" width="50px"> <!-- USER PIC -->
+              <a href="/edit/profile/">
+                <img id="user-pic" class="shadow-1" src="{{user.profilePic}}" alt="user-pic"> <!-- USER PIC -->
               </a>
             </li>
             <li>
@@ -36,11 +39,39 @@
         </div>
       
       </div>
-      <hr class="hr-gray">
+      <hr class="hr">
     </nav>
     {{{body}}}
-
+<footer class="container">
+    <div class="footer row-1">
+      <div>
+        <p class="gray-text fs-12">&copy;MAKERSXCHANGE <br>
+        Miami, FL U.S.A
+        </p>
+        <p class="gray-text fs-12">&copy;JMXXII</p>
+      </div>
+      <div class="md-contain">
+        <div class="contain-social row-1">
+          <a href="https://twitter.com/ironhackmia"><img class="shadow-1" src="/images/twitter.png" alt="twitter-icon" width="30px"></a>
+          <a href="https://www.instagram.com/ironhackmia/?hl=en"><img class="shadow-1" src="/images/instagram.png" alt="instagram-icon" width="30px"></a>
+          <a href="https://www.youtube.com/channel/UCWD3Q1-d9vzxt1cXUmpbjqg"><img class="shadow-1" src="/images/youtube.png" alt="youtube-icon" width="35px"></a>
+        
+        </div>
+        <br>
+        <div>
+          <ul class="nav-list w-400">
+            <a href="/#"><li class="gray-text fs-12">Legal</li></a>
+            <a href="/#"><li class="gray-text fs-12">Privacy</li></a>
+            <a href="/#"><li class="gray-text fs-12">Contact Us</li></a>
+            <a href="/#"><li class="gray-text fs-12">About Us</li></a>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
     <script src='/javascripts/script.js'></script>
+     <script src="http://vjs.zencdn.net/6.8.0/video.js"></script>
   </body>
 </html>
   

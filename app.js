@@ -95,10 +95,12 @@ app.use(passport.session());
 
 
 
+const workRoute = require('./routes/user-work')
 const authRoute = require('./routes/auth-route')
 const index = require('./routes/index');
 app.use('/', index);
 app.use('/', authRoute);
+app.use('/', workRoute);
 
 module.exports = app;
 
