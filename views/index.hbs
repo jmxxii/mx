@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="http://unpkg.com/css-font-family@1.0.6/css/css-font-family.min.css" />
   <link rel="stylesheet" href="/stylesheets/style.css">
   <meta charset="UTF-8">
@@ -10,7 +11,7 @@
 </head>
 <body>
     <nav class="container"> <!-- NAV BAR -->
-      <div class="nav-bar">
+      <div class="nav-bar" data-aos="zoom-out">
         <div class="logo"> <!-- LOGO -->
           <img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon">
         </div>
@@ -37,7 +38,7 @@
 
   <!-- ===============================================START OF HEADER================================================================= -->
   <div class="div-5 align-items"> 
-    <h1 class="header-text sans-serif">
+    <h1 class="header-text sans-serif" data-aos="zoom-out">
       NEW AGE. <br>
       NEW POSSIBILITIES. <br>
       OPPURTUNITY FOR ALL.
@@ -45,20 +46,20 @@
   </div>
   <!-- ===============================================END OF HEADER================================================================= -->
   <!-- ===============================================START OF YELLOW DIV================================================================= -->
-  <div class="bg-yellow div-5">
+  <div class="bg-yellow div-5" data-aos="fade-in">
     <div class="h-25 align-items">
-      <h2 class="white-text sans-serif">ITS SIMPLE.</h2>
+      <h2 class="white-text sans-serif" data-aos="zoom-out">ITS SIMPLE.</h2>
     </div>
     <div class="container row-1"> <!-- BOTTOM DIV -->
-      <div class="md-contain">
+      <div class="md-contain" data-aos="fade-up">
         <img src="/images/Create-icon_1@216x-8.png" alt="create-icon" width="225px"> <!-- CREATE -->
         <h3 class="white-demi sans-serif">CREATE</h3>
       </div>
-      <div class="md-contain"> 
-        <img src="/images/UPLOAD@216x-8.png" alt="upload-icon" width="175px">
+      <div class="md-contain" data-aos="fade-up"> 
+        <img src="/images/UPLOAD2.png" alt="upload-icon" width="175px">
         <h3 class="white-demi sans-serif">UPLOAD</h3> <!-- UPLOAD -->
       </div>
-      <div class="md-contain"> <!-- SHARE -->
+      <div class="md-contain" data-aos="fade-up"> <!-- SHARE -->
         <img src="/images/SHARE@216x-8.png" alt="share-icon" width="125px" height="150px">
         <h3 class="white-demi sans-serif">SHARE</h3><!-- SHARE -->
       </div>
@@ -68,7 +69,7 @@
   <!-- ===============================================START OF WHO USES================================================================= -->
   <div class="div-5 align-items">
     <div class="container row-1">
-      <div class="lg-contain">
+      <div class="lg-contain" data-aos="fade-up">
         <div class="row-1">
           <h2 class="header-text sans-serif text-shadow">WHO USES &nbsp;</h2>
           <h2 class="header-text sans-serif shadow-2"><img src="/images/logo@216x-8.png" alt="mx-logo" width="100px">?</h2>
@@ -80,7 +81,7 @@
           </p>
       </div>
       <div class="align-center lg-contain inline-flex">
-        <img  class="shadow-1" src="/images/artist-2@216x-8.png" alt="steve jobs, drake, kanye west" width="400px">
+        <img  class="shadow-1" src="/images/artist-2@216x-8.png" alt="steve jobs, drake, kanye west" width="400px" data-aos="fade-down">
       </div>
     </div>
   </div>
@@ -88,12 +89,12 @@
   <!-- ===============================================START OF DO WORK================================================================= -->
   <div class="div-5 bg-aqua align-items">
       <div class="container row-1">
-        <div class="align-center lg-contain">
+        <div class="align-center lg-contain" data-aos="fade-right">
           <img  class="shadow-1" src="/images/do-work-1.png" alt="steve jobs, drake, kanye west" width="400px">
         </div>
-          <div class="lg-contain">
-            <h2 class="header-text sans-serif shadow-2">DO WORK.</h2> 
-            <p class="white-text-sm sans-serif shadow-2">CREATORS LOOKING TO <br>
+          <div class="lg-contain" data-aos="fade-left">
+            <h2 class="header-text sans-serif shadow-2" >DO WORK.</h2> 
+            <p class="white-text-sm sans-serif shadow-2" >CREATORS LOOKING TO <br>
               START CREATING, <br>
               SHARING &amp; INSPIRING <br>
               THE <br>
@@ -103,7 +104,7 @@
       </div>
   </div>
   <!-- ===============================================END OF DO WORK================================================================= -->
-  <footer class="container">
+  <footer class="container" data-aos="fade-up">
     <div class="footer row-1">
       <div>
         <p class="gray-text fs-12">&copy;MAKERSXCHANGE <br>
@@ -131,6 +132,12 @@
     </div>
     
   </footer>
-
+ <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script src='/javascripts/script.js'></script>
+       <script type="text/javascript">
+    AOS.init({
+      duration: 3000,
+    });
+  </script>
 </body>
 </html>

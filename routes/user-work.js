@@ -71,7 +71,13 @@ router.post('/upload', upload.single('media') ,(req, res, next)=>{
 })
 
 router.get('/profile/:id', (req, res, next)=>{
-  Work.findById({_id: req.params.id})
+
+  const ObjectId = require('mongoose').Types.ObjectId;
+  const theId = new ObjectId(req.params.id)
+
+  console.log(theId);
+
+  Work.find({user: theId})
   .then(work => { 
     res.render('profile', {work: work, user: req.user} )})
 })
