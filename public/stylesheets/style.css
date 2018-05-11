@@ -24,6 +24,11 @@ body {
     height: 50px;
     border-radius: 50%;
     border: none; }
+  #user-pic-2 {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: none; }
   .container {
     max-width: 1140px;
     padding-right: 15px;
@@ -97,6 +102,13 @@ body {
     align-items: center;
     width: 100%;
     height: 100px; }
+  .pro-img {
+    padding: 1rem 2rem; }
+  .nav-bar-2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px; }
   .nav-list-container {
     display: flex;
     justify-content: space-between;
@@ -137,6 +149,11 @@ body {
     color: white;
     text-align: center;
     font-size: 22px;
+    font-weight: 600; }
+  .white-pro {
+    color: white;
+    text-align: center;
+    font-size: 36px;
     font-weight: 600; }
   .white-text-sm {
     color: white;
@@ -194,7 +211,17 @@ body {
     width: 55vw;
     height: 80vh;
     border-radius: .5rem;
-    padding-top: 5vh; }
+    padding-top: 5vh;
+    overflow-y: auto; }
+  .dash-profile {
+    background: linear-gradient(0deg, white 0%, red 57%);
+    width: 97%;
+    height: 80vh;
+    border-radius: .5rem;
+    padding-top: 5vh;
+    overflow-y: auto; }
+  .fade {
+    background-color: rgba(228, 88, 0, 0.9); }
   .contain-col {
     display: flex;
     justify-content: center;
@@ -209,17 +236,31 @@ body {
     height: 70px;
     width: 45vw;
     padding: 0px 4vw; }
+  .dash-head-2 {
+    height: 70px;
+    width: 90%;
+    padding: 0px 4vw; }
+  .align-items-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
   .dash-info-1 {
-    overflow-y: auto; }
+    overflow-y: auto;
+    overflow: hidden; }
   .dash-info-each-lg {
     background: rgba(255, 255, 255, 0.8);
     height: 125px;
     width: 55vw;
     border-radius: 100px;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4); }
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
+    display: flex; }
   .pill-width-dash {
     width: 45vw;
     min-height: 24vh; }
+  .pill-width-dash-2 {
+    width: 48vw;
+    padding: 0px 49px; }
   .lh-px {
     line-height: 40px; }
   .no-lh {
@@ -239,6 +280,18 @@ body {
     margin: 1em 0;
     padding: 0; }
   .search {
-    height: 30px; } }
+    height: 30px; }
+  .bg-discover {
+    background: linear-gradient(0deg, white 0%, #fea60a 57%);
+    height: 100vh; }
+  .userpage-link {
+    text-decoration: none;
+    color: white; }
+  .profile-contain {
+    background: white;
+    background: linear-gradient(0deg, white 0%, red 57%);
+    width: 100%;
+    height: 35vh;
+    border-radius: 5px; } }
 
 /*# sourceMappingURL=style.css.map */

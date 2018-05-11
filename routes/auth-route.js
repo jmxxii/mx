@@ -42,24 +42,111 @@ router.get('/search', (req, res, next) => {
 );
 })
 
-router.get('/p/dashboard/', ensureAuthenticated, (req, res, next) => {
-  User.findById(req.user._id, (err, user)=> {
-    res.render('auth/dashboard', {user});
-    console.log(user)
+router.get('/edit/profile/:id',ensureAuthenticated,(req, res, next) => {
+  User.findById({_id: req.params.id})
+    .then(user => { 
+      // console.log(" ================ who is logged in: ", user)
+      res.render('auth/edit-profile', {user: user})
   })
-  Work.findOne({owner: req.user._id}, (err, work) => {
-    res.render('auth/dashboard', {work: work});
-    console.log(work)
+})
+
+router.post('/edit/profile/:id', upload.single('profilePic'), (req, res, next)=> {
+  User.findById(req.params.id)
+  .then(user => {
+    // console.log("===========", user);
+    console.log("currentPassword: ",req.body.currentPassword)
+    console.log("newPassword: ",req.body.newPassword)
+
+    var currentPassword = req.body.currentPassword;
+    var newPassword = req.body.newPassword;
+
+    user.fullname = req.body.editedFullname;
+    user.email = req.body.email;
+    user.phone = req.body.phone;
+    user.username = req.body.username;
+    user.role = req.body.role;
+
+    if((currentPassword ==="" && newPassword !=="") || (currentPassword !=="" && newPassword ==="" )){
+      console.log("in the if")
+      res.redirect(`/edit/profile/${user._id}`)
+      return;
+    }
+    // console.log("============================")
+    // console.log("password from db: ", req.user.password)
+    // console.log("current pass: ", currentPassword);
+    // console.log("new pass: ", newPassword)
+    // console.log("============================")
+console.log("old hash from db before saving: ", user.password)
+    if (currentPassword && newPassword && bcrypt.compareSync(currentPassword, user.password)) {
+      console.log("in the weird password thing")
+      const salt = bcrypt.genSaltSync(10);
+      const hashPass = bcrypt.hashSync(newPassword, salt);
+      user.password = hashPass;
+     console.log("============================")
+      console.log("hash: ",hashPass);
+      console.log("db pass: ",user.password)
+      console.log("============================")
+
+    }
+    if(req.file){
+      user.profilePic = `/uploads/${req.file.filename}`
+    } else {
+      user.profilePic = user.profilePic
+    }
+    user.save()
+    .then(savedUser => {
+      console.log("new pass: ", savedUser.password)
+      res.redirect(`/profile/${user._id}`)
+    })
+    .catch( err => {
+      console.log("Error while saving updated user: ", err)
+    })
+  })
+  .catch(err => {
+    console.log("Error while finding the user: ", err)
+  })
+})
+
+
+router.get('/p/dashboard/', ensureAuthenticated, (req, res, next) => {
+  // User.findById(req.user._id, (err, user)=> {       //=========================HERE===========================
+  //   res.render('auth/dashboard', {user});
+  //   console.log(user)
+  // })
+  Work.find({user: req.user._id}, (err, work) => {
+    // console.log('===============================>')
+    // console.log(work)
+    res.render('auth/dashboard', {work: work, user: req.user} );
   })
 });
 
 
 router.get('/p/discover/', ensureAuthenticated, (req, res, next) => {
-  User.findById(req.user._id, (err, user)=> {
-    res.render('auth/discover', {user});
-    console.log(user)
+  Work.find({}, (err, work)=> {
+    if (err){
+      return next(err)
+    }
+    res.render('auth/discover', {work: work, user: req.user});
+    console.log(work)
   })
 });
+
+
+router.post('/p/dashboard/:id/delete', function(req, res, next){
+  Work.findOne({
+    _id: req.params.id
+  }, (err, theWork) => {
+    if (err){
+    return next(err);
+  }
+  theWork.remove((err) => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/p/dashboard');
+  })
+})
+})
 
 
     /* SIGN UP */

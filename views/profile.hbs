@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="profile-contain" data-aos="fade-up">
+    <div class="container nav-bar-2">
+      <div class="pro-img"> <!-- Profilepic -->
+        <img class="align-items-center shadow-1" id="user-pic-2" src="{{user.profilePic}}" alt="user-pic">
+      </div>
+      <div>
+        <div id="upper-info nav-list">
+            <h1 class="white-pro fs-50">{{user.username}}</h1>
+            <p>Film Maker/Netflix Watcher</p>
+        </div>
+        <div id="summary">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Heyyyyyyyy{{user.fullname}}</h2>
+<div class="dash-profile container shadow-2" data-aos="fade-up">
+      <div class="dash-head-2 align-items">
+        <div class="align-items-center">
+          <h4 class="white-text text-shadow fs-20">Projects</h4>
+        </div>
+        <div class='nav-list'>
+
+        </div>
+      </div>
+      <hr>
+      <div class="dash-info-1 align-items-2">
+         
+            {{#each work}}
+        <div class="dash-info-each-lg" >
+
+          <div class="pill-width-dash-2 align-items-center nav-list dash-info-1">
+              <video id="my-video" class="video-js shadow-1" controls preload="auto" width="200" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                <source src="{{this.media}}" type='video/mp4'>
+                <p class="vjs-no-js">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+              </video>
+              <div id="item-info">
+                
+                <h4 class="gray-text no-lh"><b>{{this.projectname}}</b></h4>
+                <a href="/profile/{{this._id}}"><p class="gray-text fs-12" >{{this.artistname}}</p></a>
+              </div>
+              <div id="item-genre" class="nav-list">
+                <h4 class="gray-text fs-12 lh-px">{{this.genre}}</h4>
+              </div>
+              <div class="nav-list align-items-center" >
+                <img src="/images/play-icon.png" alt="play-icon" width="15px" height="15px">
+                <p class="gray-text fs-12">152</p>
+              </div>
+              <div class="nav-list align-items-center">
+                <img src="/images/download-icon.png" alt="download-icon" width="18px" height="18px">
+                <p class="gray-text fs-12">32</p>
+              </div>
+
+              <div>
+  
+                  <a href="/p/dashboard/{{this._id}}/edit"><button class="gray-text fs-12">Edit</button></a>
+                
+                <br>
+                <form action="/p/dashboard/{{this._id}}/delete" method="POST">
+                  <button href="/delete" class="gray-text fs-12">Delete</button>
+                </form>
+                
+              </div>
+          </div>
+          <br>
+        </div>
+        <br>
+        
+          {{/each}}
+          
+      </div>
+    </div>

@@ -7,6 +7,7 @@
     "dev": "DEBUG=mx:* nodemon ./bin/www"
   },
   "dependencies": {
+    "aos": "^2.2.0",
     "bcrypt": "^2.0.1",
     "body-parser": "~1.18.2",
     "cloudinary": "^1.11.0",

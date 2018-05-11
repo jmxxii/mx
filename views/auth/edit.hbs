@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="div-5 align-items-center align-items">
+    <div class="md-contain" >
+      <h1>Update</h1>
+      <h3>{{work.projectname}}</h3>
+      <br>
+      <form class="md-contain" action="/p/dashboard/update/{{work._id}}" method="POST" enctype="multipart/form-data">
+      <br>
+      <input type="text" name="projectname" placeholder="PROJECT NAME">
+      <br>
+      <input type="text" name="artistname" placeholder="ARTIST">
+      <br>
+      <input type="text" name="genre" placeholder="GENRE">
+      <br>
+      {{!-- <input type="file" name="albumart"> --}}
+      <br>
+      <input type="file" name="media">
+      <br>
+      <br>
+      <button>Update</button>
+      
+      </form>
+    </div>
+  </div>
+</div>

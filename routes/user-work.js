@@ -18,6 +18,25 @@ function ensureAuthenticated(req, res, next) {
   }
 }
 
+router.get('/p/dashboard/:id/edit', function (req, res) {
+  Work.findById({_id: req.params.id})
+  .then(work => { 
+    res.render('auth/edit', {work: work} )})
+})
+
+router.post('/p/dashboard/update/:id', upload.single('media'),function(req, res){
+  Work.findByIdAndUpdate(req.params.id, {
+    projectname: req.body.projectname,
+    artistname: req.body.artistname,
+    genre: req.body.genre,
+    media: `/uploads/${req.file.filename}`
+  })
+  .then(work => { console.log(work) })
+  .catch(theError => { console.log(theError) })
+  res.redirect('/p/discover')
+  })
+
+
 router.get('/upload', ensureAuthenticated, (req, res, next) => {
   User.findById(req.user._id, (err, user)=> {
     res.render('crud/upload', {user});
@@ -49,6 +68,12 @@ router.post('/upload', upload.single('media') ,(req, res, next)=>{
       console.log(err);
       next(err);
     })
+})
+
+router.get('/profile/:id', (req, res, next)=>{
+  Work.findById({_id: req.params.id})
+  .then(work => { 
+    res.render('profile', {work: work, user: req.user} )})
 })
 
 

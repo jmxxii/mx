@@ -1,19 +1,19 @@
 <div class="container dashboard">
 
-  <div class="dash-div shadow-2">
+  <div class="dash-div shadow-2" data-aos="fade-right">
     <div class="container contain-col">
       <img src="/images/dashboard-2.png" alt="dash-icon" width="50px">
-      <h4 class="white-demi">{{user.username}}</h4> 
+      <h4 class="white-demi" data-aos="fade-in"><a class="userpage-link" href="/profile/{{user._id}}">{{user.username}}</a></h4> 
       <hr width='200vw'>
-      <button class="btn white-text fs-20">WORK</button>
+      <button class="btn white-text fs-20" data-aos="zoom-in">WORK</button>
       <hr width='200vw'>
-      <button class="btn white-text fs-20">PROJECTS</button>
+      <button class="btn white-text fs-20" data-aos="zoom-in">PROJECTS</button>
       <hr width='200vw'>
-      <button class="btn white-text fs-20">FAVORITES</button>
+      <button class="btn white-text fs-20" data-aos="zoom-in">FAVORITES</button>
       <hr width='200vw'>
     </div>
   </div>
-  <div class="dash-work container shadow-2">
+  <div class="dash-work container shadow-2" data-aos="fade-down">
       <div class="dash-head nav-bar-container">
         <div class="nav-list w-150 align-items-center">
           <img class="shadow-1" src="/images/music-icon@216x-8.png" alt="music-icon" width="50px" height="50px">
@@ -25,10 +25,11 @@
       </div>
       <hr>
       <div class="dash-info-1">
-        <div class="dash-info-each-lg align-items">
-          {{#each work}}
-          <div class="pill-width-dash align-items-center nav-list">
-           
+         
+            {{#each work}}
+        <div class="dash-info-each-lg align-items" data-aos="zoom-in">
+
+          <div class="pill-width-dash align-items-center nav-list dash-info-1">
               <video id="my-video" class="video-js shadow-1" controls preload="auto" width="200" poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
                 <source src="{{this.media}}" type='video/mp4'>
                 <p class="vjs-no-js">
@@ -37,6 +38,7 @@
                 </p>
               </video>
               <div id="item-info">
+                
                 <h4 class="gray-text no-lh"><b>{{this.projectname}}</b></h4>
                 <p class="gray-text fs-12" >{{this.artistname}}</p>
               </div>
@@ -51,15 +53,21 @@
                 <img src="/images/download-icon.png" alt="download-icon" width="18px" height="18px">
                 <p class="gray-text fs-12">32</p>
               </div>
+
               <div>
-                <a href="/edit" class="gray-text fs-12">Edit</a>
+  
+                  <a href="/p/dashboard/{{this._id}}/edit"><button class="gray-text fs-12">Edit</button></a>
+                
                 <br>
-                <a href="/delete" class="gray-text fs-12">Delete</a>
+                <form action="/p/dashboard/{{this._id}}/delete" method="POST">
+                  <button href="/delete" class="gray-text fs-12">Delete</button>
+                </form>
+                
               </div>
-            {{/each}}
-            
           </div>
         </div>
+          {{/each}}
+          
       </div>
     </div>
 </div>
