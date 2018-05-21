@@ -16,23 +16,7 @@ body {
 //   margin-left: auto;
 // }
 
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
-  }
-}
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
 
 @media (min-width: 1200px) {
   #user-pic{
@@ -127,6 +111,9 @@ body {
   .bg-login {
     background: rgb(88,175,191);
     background: linear-gradient(0deg, rgba(88,175,191,1) 0%, rgba(255,255,255,1) 40%, rgba(255,255,255,1) 60%, rgba(254,225,191,1) 100%);
+  }
+  .layout {
+    width: 50px;
   }
   .shadow-1 {
     filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.4)); 
@@ -271,7 +258,8 @@ body {
     border-radius: .5rem;
     width: 20vw;
     height: 80vh;
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(54,67,191,1) 57%);
+    background: linear-gradient(0deg, white 0%, #3643bf 57%);
+    margin-right: 2vw;
   }
   .dashboard {
     display: flex;
@@ -333,15 +321,16 @@ body {
   .dash-info-each-lg{
     background: rgba(255, 255, 255, 0.8);
     height: 125px;
-    width: 55vw;
+    width: 100%;
     border-radius: 100px;
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.4);
     display: flex;
   }
   
   .pill-width-dash {
-    width: 45vw;
+    width: 100%;
     min-height: 24vh;
+    padding: 50px;
   }
   .pill-width-dash-2 {
     width: 48vw;
@@ -387,4 +376,5 @@ body {
     height: 35vh;
     border-radius: 5px;
   }
+ 
 }

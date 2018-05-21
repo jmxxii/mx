@@ -34,7 +34,8 @@
               <div id="item-info">
                 
                 <h4 class="gray-text no-lh"><b>{{this.projectname}}</b></h4>
-                <a href="/profile/{{this._id}}"><p class="gray-text fs-12" >{{this.artistname}}</p></a>
+                {{!-- /profile/1234567890 => because work model has user field that captures the ID of the user who created it --}}
+                <a href="/profile/{{this.user}}"><p class="gray-text fs-12" >{{this.artistname}}</p></a>
               </div>
               <div id="item-genre" class="nav-list">
                 <h4 class="gray-text fs-12 lh-px">{{this.genre}}</h4>

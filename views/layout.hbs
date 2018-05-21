@@ -8,69 +8,73 @@
     <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
   </head>
   <body>
-    <nav class="container" > <!-- NAV BAR -->
-      <div class="nav-bar">
-        <div class="logo" data-aos="zoom-out"> <!-- LOGO -->
-          <a href="/"><img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon"></a>
-          <a href="/upload"><img src="/images/UPLOAD@216x-8.png" alt="upload-icon" width="40px"></a>
-        </div>
-  
-        <div class="nav-list-container" data-aos="zoom-out">
-          <ul class="nav-list w-400 align-items-center"> <!-- Nav Links -->
-            <li> 
-              <a href="/p/discover"> 
-                <img class="shadow-1" src="/images/discover-icon.png" alt="discover-icon" width="50px"> <!-- DISCOVER -->
-              </a></li>
-            <li>
-              <a href="/p/dashboard/">
-                <img class="shadow-1" src="/images/DASHBOARD.png" alt="dashboard-icon" width="50px"> <!-- DASHBOARD -->
-              </a>
-            </li>
-            <li>
-              <a href="/edit/profile/{{user._id}}">
-                <img id="user-pic" class="shadow-1" src="{{user.profilePic}}" alt="user-pic"> <!-- USER PIC -->
-              </a>
-            </li>
-            <li>
-              <a href="/logout">
-                <img class="shadow-1" src="/images/logout-rounded-filled.png" alt="logout-icon" width="50px"> <!-- LOGOUT ICON -->
-              </a>
-            </li>
-          </ul>
-        </div>
-      
-      </div>
-      <hr class="hr">
-    </nav>
-    {{{body}}}
-<footer class="container" >
-    <div class="footer row-1">
-      <div>
-        <p class="gray-text fs-12">&copy;MAKERSXCHANGE <br>
-        Miami, FL U.S.A
-        </p>
-        <p class="gray-text fs-12">&copy;JMXXII</p>
-      </div>
-      <div class="md-contain">
-        <div class="contain-social row-1">
-          <a href="https://twitter.com/ironhackmia"><img class="shadow-1" src="/images/twitter.png" alt="twitter-icon" width="30px"></a>
-          <a href="https://www.instagram.com/ironhackmia/?hl=en"><img class="shadow-1" src="/images/instagram.png" alt="instagram-icon" width="30px"></a>
-          <a href="https://www.youtube.com/channel/UCWD3Q1-d9vzxt1cXUmpbjqg"><img class="shadow-1" src="/images/youtube.png" alt="youtube-icon" width="35px"></a>
+<div class="container">
+      <nav class="container" > <!-- NAV BAR -->
+        <div class="nav-bar">
+          <div class="logo" data-aos="zoom-out"> <!-- LOGO -->
+            <a href="/"><img class="shadow-1" src="/images/logo@216x-8.png" width="80px" alt="MX-icon"></a>
+            <a href="/upload"><img src="/images/UPLOAD@216x-8.png" alt="upload-icon" width="40px"></a>
+          </div>
+    
+          <div class="nav-list-container" data-aos="zoom-out">
+            <ul class="nav-list w-400 align-items-center"> <!-- Nav Links -->
+              <li> 
+                <a href="/p/discover"> 
+                  <img class="shadow-1" src="/images/discover-icon.png" alt="discover-icon" width="50px"> <!-- DISCOVER -->
+                </a></li>
+              <li>
+                <a href="/p/dashboard/">
+                  <img class="shadow-1" src="/images/DASHBOARD.png" alt="dashboard-icon" width="50px"> <!-- DASHBOARD -->
+                </a>
+              </li>
+              <li>
+                <a href="/edit/profile/{{user._id}}">
+                  <img id="user-pic" class="shadow-1" src="{{user.profilePic}}" alt="user-pic"> <!-- USER PIC -->
+                </a>
+              </li>
+              <li>
+                <a href="/logout">
+                   <!-- LOGOUT ICON -->
+                  <img class="layout shadow-1" src='/images/logout-rounded-filled.png' alt='logout-icon' onmouseover="this.src='/images/logout-rounded-red.png';" onmouseout="this.src='/images/logout-rounded-filled.png';"/>
+
+                </a>
+              </li>
+            </ul>
+          </div>
         
         </div>
-        <br>
+        <hr class="hr">
+      </nav>
+      {{{body}}}
+  <footer class="container" >
+      <div class="footer row-1">
         <div>
-          <ul class="nav-list w-400">
-            <a href="/#"><li class="gray-text fs-12">Legal</li></a>
-            <a href="/#"><li class="gray-text fs-12">Privacy</li></a>
-            <a href="/#"><li class="gray-text fs-12">Contact Us</li></a>
-            <a href="/#"><li class="gray-text fs-12">About Us</li></a>
-          </ul>
+          <p class="gray-text fs-12">&copy;MAKERSXCHANGE <br>
+          Miami, FL U.S.A
+          </p>
+          <p class="gray-text fs-12">&copy;JMXXII</p>
+        </div>
+        <div class="md-contain">
+          <div class="contain-social row-1">
+            <a href="https://twitter.com/ironhackmia"><img class="shadow-1" src="/images/twitter.png" alt="twitter-icon" width="30px"></a>
+            <a href="https://www.instagram.com/ironhackmia/?hl=en"><img class="shadow-1" src="/images/instagram.png" alt="instagram-icon" width="30px"></a>
+            <a href="https://www.youtube.com/channel/UCWD3Q1-d9vzxt1cXUmpbjqg"><img class="shadow-1" src="/images/youtube.png" alt="youtube-icon" width="35px"></a>
+          
+          </div>
+          <br>
+          <div>
+            <ul class="nav-list w-400">
+              <a href="/#"><li class="gray-text fs-12">Legal</li></a>
+              <a href="/#"><li class="gray-text fs-12">Privacy</li></a>
+              <a href="/#"><li class="gray-text fs-12">Contact Us</li></a>
+              <a href="/#"><li class="gray-text fs-12">About Us</li></a>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-    
-  </footer>
+      
+    </footer>
+</div>
 
   
  <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>

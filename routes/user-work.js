@@ -70,16 +70,44 @@ router.post('/upload', upload.single('media') ,(req, res, next)=>{
     })
 })
 
+// router.get('/profile/:id', (req, res, next)=>{
+
+//   const ObjectId = require('mongoose').Types.ObjectId;
+//   const theId = new ObjectId(req.params.id)
+
+//   console.log(theId);
+
+//   Work.find({user: theId})
+//   .then(work => { 
+//     res.render('profile', {work: work, user: req.user} )})
+// })
+
 router.get('/profile/:id', (req, res, next)=>{
 
   const ObjectId = require('mongoose').Types.ObjectId;
   const theId = new ObjectId(req.params.id)
 
-  console.log(theId);
-
-  Work.find({user: theId})
-  .then(work => { 
-    res.render('profile', {work: work, user: req.user} )})
+  console.log("the id is: ",theId);
+  User.findById(theId) // we find the user by the ID from the URL (through params)
+  .then(foundUser => {
+    console.log("foundUser: ", foundUser)
+    Work.find({user: theId}) // we find the work that belongs to this user by this user field that holds the Id of the user who created it
+      .then(foundWork => {
+        console.log("foundWork: ", foundWork);
+        const user = req.user; 
+        //       this page will have 2 different users on it (currently logged in user (in our case let's call them just user) 
+        //        and user whose page we are visiting (let's call him foundUser))
+        //             ^
+        //             |
+        res.render('profile', {work: foundWork, foundUser: foundUser, user:user} )
+      })
+      .catch(error => {
+        console.log("error is: ",error)
+      })
+    })
+    .catch(error => {
+      console.log("error is: ",error)
+    })
 })
 
 
